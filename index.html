@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WIKILABS App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Página de inicio -->
+  <section id="landingPage">
+    <div class="logo-container pretty-logo-glow">
+      <div class="logo-frame">
+        <img src="LOGO1.png" alt="WIKILABS Logo" class="logo animated-logo-glow">
+      </div>
+    </div>
+    <h1 class="fade-in">Tu educación, tu ritmo, tu futuro</h1>
+    <p class="tagline fade-in">Aprende libremente y sin límites</p>
+    <div style="display: flex; gap: 16px; justify-content: center; margin-bottom: 18px;">
+      <button id="loginBtn" class="animated-btn fade-in">Iniciar sesión</button>
+      <button id="getStartedBtn" class="animated-btn fade-in">Registrarse</button>
+    </div>
+    <footer>
+      <button class="link-btn bottom-left">Términos y condiciones</button>
+      <button class="link-btn bottom-right">Acerca de nosotros</button>
+    </footer>
+  </section>
+
+  <!-- Página de inicio de sesión -->
+  <section id="loginPage" style="display: none;">
+    <div class="login-form-container">
+      <button id="backToHomeBtn" class="back-btn" style="margin-bottom: 18px;">← Volver</button>
+      <form class="login-form" autocomplete="off">
+        <h2>Iniciar Sesión</h2>
+        <label for="login-email">Correo Electrónico</label>
+        <input type="email" id="login-email" placeholder="Ingresa tu correo electrónico" required>
+        <label for="login-password">Contraseña</label>
+        <input type="password" id="login-password" placeholder="Ingresa tu contraseña" required>
+        <button type="submit" class="animated-btn">Entrar</button>
+        <p class="login-register-link">¿No tienes cuenta?&nbsp;<a href="#" id="goToRegister">Regístrate aquí</a></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Página de registro -->
+  <section id="registerPage" style="display: none;">
+    <div class="login-form-container">
+      <button id="backToHomeBtnRegister" class="back-btn" style="margin-bottom: 18px;">← Volver</button>
+      <form class="login-form" autocomplete="off">
+        <h2>Registro</h2>
+        <label for="register-name">Nombre Completo</label>
+        <input type="text" id="register-name" placeholder="Ingresa tu nombre completo" required>
+        <label for="register-email">Correo Electrónico</label>
+        <input type="email" id="register-email" placeholder="Ingresa tu correo electrónico" required>
+        <label for="register-password">Contraseña</label>
+        <input type="password" id="register-password" placeholder="Crea una contraseña" required>
+        <label for="register-password2">Confirmar Contraseña</label>
+        <input type="password" id="register-password2" placeholder="Confirma tu contraseña" required>
+        <button type="submit" class="animated-btn">Registrarse</button>
+        <p class="login-register-link">¿Ya estás registrado?&nbsp;<a href="#" id="goToLogin">Inicia sesión aquí</a></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Página de cursos destacados -->
+  <section id="coursesPage" style="display: none;">
+    <header class="courses-header">
+      <div style="flex:1"></div>
+      <div class="courses-actions">
+        <button class="action-btn">PERFIL</button>
+        <button class="action-btn">ESTUDIA</button>
+<button id="profileIconBtn" class="action-btn icon-btn" title="Perfil">
+  <span id="profileIconSpan" style="font-size:1.3em; display:flex; align-items:center; justify-content:center; transition: transform 0.3s;"></span>
+</button>      </div>
+    </header>
+    <div style="max-width: 1100px; margin: 0 auto; padding: 40px 0;">
+      <h1 style="font-size: 2.8rem; font-weight: bold; text-align: center; margin-bottom: 40px;">Prueba lo aprendido</h1>
+      <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;">
+        <div style="background: #e6fbff; border-radius: 20px; box-shadow: 0 4px 32px #00d9ff22; padding: 32px 28px; width: 320px;">
+          <div style="font-size: 2.5rem; margin-bottom: 12px;">∑</div>
+          <h2 style="color: #222; font-size: 1.5rem; margin-bottom: 10px;">Matemáticas</h2>
+          <p style="color: #333;">Explora el fascinante mundo de los números, álgebra, geometría y cálculo.</p>
+          <ul style="color: #333; margin: 12px 0 18px 18px; text-align: left;">
+            <li>Clases interactivas y ejercicios prácticos</li>
+            <li>Material descargable y videos explicativos</li>
+            <li>Soporte personalizado de tutores</li>
+          </ul>
+          <button id="btnMath" class="animated-btn">Ponte a prueba</button>
+        </div>
+        <div style="background: #eaffea; border-radius: 20px; box-shadow: 0 4px 32px #00ffb022; padding: 32px 28px; width: 320px;">
+          <div style="font-size: 2.5rem; margin-bottom: 12px;">🔬</div>
+          <h2 style="color: #222; font-size: 1.5rem; margin-bottom: 10px;">Ciencias Naturales</h2>
+          <p style="color: #333;">Descubre los secretos de la biología, física y química con experimentos y recursos visuales.</p>
+          <ul style="color: #333; margin: 12px 0 18px 18px; text-align: left;">
+            <li>Laboratorios virtuales y simulaciones</li>
+            <li>Guías de estudio y resúmenes</li>
+            <li>Foros de discusión y asesoría en línea</li>
+          </ul>
+          <button id="btnCiencias" class="animated-btn">Ponte a prueba</button>
+        </div>
+        <div style="background: #fffbe6; border-radius: 20px; box-shadow: 0 4px 32px #ffd90022; padding: 32px 28px; width: 320px;">
+          <div style="font-size: 2.5rem; margin-bottom: 12px;">🏛️</div>
+          <h2 style="color: #222; font-size: 1.5rem; margin-bottom: 10px;">Historia</h2>
+          <p style="color: #333;">Viaja a través del tiempo y comprende los eventos que han marcado la humanidad.</p>
+          <ul style="color: #333; margin: 12px 0 18px 18px; text-align: left;">
+            <li>Líneas de tiempo interactivas</li>
+            <li>Documentales y recursos multimedia</li>
+            <li>Debates y análisis de fuentes históricas</li>
+          </ul>
+          <button id="btnHistoria" class="animated-btn">Ponte a prueba</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

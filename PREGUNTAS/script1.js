@@ -1,0 +1,140 @@
+window.addEventListener('DOMContentLoaded', () => {
+    // Animación de header y contenedor principal
+    const header = document.querySelector('.header');
+    const container = document.querySelector('.container.quiz-container');
+    if (header) header.style.animation = 'fadeDown 1s ease forwards';
+    if (container) setTimeout(() => { container.style.opacity = '1'; }, 200);
+
+    // Animación escalonada de preguntas
+    const questions = document.querySelectorAll('.question-block');
+    questions.forEach((q, i) => {
+        setTimeout(() => {
+            q.style.opacity = '1';
+            q.style.transform = 'translateY(0)';
+        }, 400 + i * 200);
+    });
+
+    // Gráficos ilustrativos
+    // Fracción 0.75
+    const fracCtx = document.getElementById('fracChart').getContext('2d');
+    new Chart(fracCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['0.75', '0.25'],
+            datasets: [{
+                data: [75, 25],
+                backgroundColor: ['#36e2f6', '#e0f7fa']
+            }]
+        },
+        options: { plugins: { legend: { display: false } }, cutout: '70%' }
+    });
+
+    // Lápices proporcionales
+    const lapizCtx = document.getElementById('lapizChart').getContext('2d');
+    new Chart(lapizCtx, {
+        type: 'bar',
+        data: {
+            labels: ['2 lápices', '6 lápices'],
+            datasets: [{
+                data: [4, 12],
+                backgroundColor: ['#36e2f6', '#43e97b']
+            }]
+        },
+        options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+    });
+
+    // Círculo área
+    const circleCtx = document.getElementById('circleChart').getContext('2d');
+    new Chart(circleCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Área', 'Resto'],
+            datasets: [{
+                data: [28.26, 8],
+                backgroundColor: ['#43e97b', '#e0f7fa']
+            }]
+        },
+        options: { plugins: { legend: { display: false } }, cutout: '60%' }
+    });
+
+    // Dado probabilidad
+    const dadoCtx = document.getElementById('dadoChart').getContext('2d');
+    new Chart(dadoCtx, {
+        type: 'pie',
+        data: {
+            labels: ['3', 'Otros'],
+            datasets: [{
+                data: [1, 5],
+                backgroundColor: ['#36e2f6', '#e0f7fa']
+            }]
+        },
+        options: { plugins: { legend: { display: false } } }
+    });
+
+    // Cuadrado área y perímetro
+    const squareCtx = document.getElementById('squareChart').getContext('2d');
+    new Chart(squareCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Área', 'Perímetro'],
+            datasets: [{
+                data: [25, 20],
+                backgroundColor: ['#43e97b', '#36e2f6']
+            }]
+        },
+        options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+    });
+
+    // Evaluación del quiz
+    const correctAnswers = {
+        q1: 'B',
+        q2: 'C',
+        q3: 'B',
+        q4: 'B',
+        q5: 'C',
+        q6: 'D',
+        q7: 'B',
+        q8: 'B',
+        q9: 'B',
+        q10: 'B'
+    };
+
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let total = 10;
+        let correct = 0;
+        for (let i = 1; i <= total; i++) {
+            const answer = document.querySelector(`input[name="q${i}"]:checked`);
+            if (answer && answer.value === correctAnswers[`q${i}`]) correct++;
+        }
+        const percent = Math.round((correct / total) * 100);
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `Respuestas correctas: <b>${correct}</b> de <b>${total}</b> (<b>${percent}%</b>)`;
+        resultDiv.style.display = 'block';
+// Guardar estadísticas en localStorage para el perfil
+let stats = JSON.parse(localStorage.getItem('wikilabs_stats') || '{}');
+stats.math = {
+    correct: correct,
+    wrong: total - correct
+};
+localStorage.setItem('wikilabs_stats', JSON.stringify(stats));
+        // Mostrar gráfico de resultados
+        const resultChart = document.getElementById('resultChart');
+        resultChart.style.display = 'block';
+        new Chart(resultChart.getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Correctas', 'Incorrectas'],
+                datasets: [{
+                    data: [correct, total - correct],
+                    backgroundColor: ['#43e97b', '#f6c736']
+                }]
+            },
+            options: {
+                plugins: { legend: { display: true } }
+            }
+        });
+        window.scrollTo({ top: resultDiv.offsetTop - 60, behavior: 'smooth' });
+    });
+});
+
