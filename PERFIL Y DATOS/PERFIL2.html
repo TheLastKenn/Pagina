@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario | WikiLabs</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="header">
+        <nav class="header-menu perfil-header-menu">
+            <ul style="margin:0; padding:0;">
+                <li class="nav-menu-item">
+                    <a href="../index.html#coursesPage" class="nav-menu-link volver-btn perfil-volver-btn">Volver</a>
+                </li>
+            </ul>
+            <div class="logo-container perfil-logo-container">
+                <img src="../LOGO1.png" class="logo perfil-logo">
+            </div>
+        </nav>
+    </div>
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-emoji" id="profile-emoji" style="cursor:pointer;" title="Haz clic para cambiar tu ícono">🦉</div>
+            <h2 id="username">Nombre de Usuario</h2>
+            <p id="user-email" class="user-email"></p>
+        </div>
+        <!-- Modal de selección de íconos -->
+        <div id="iconModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:#0008; justify-content:center; align-items:center; z-index:2000;">
+            <div style="background:#232526; padding:24px; border-radius:18px; display:flex; flex-wrap:wrap; gap:18px; max-width:480px;">
+                <span class="animal-icon-option" data-index="0"><!-- Zorro -->
+                  <svg viewBox="0 0 64 64" width="56" height="56"><ellipse cx="32" cy="38" rx="20" ry="18" fill="#FFB300"/><polygon points="12,24 24,8 28,28" fill="#FF9800"/><polygon points="52,24 40,8 36,28" fill="#FF9800"/><ellipse cx="24" cy="40" rx="3" ry="5" fill="#fff"/><ellipse cx="40" cy="40" rx="3" ry="5" fill="#fff"/><circle cx="24" cy="42" r="1.2" fill="#222"/><circle cx="40" cy="42" r="1.2" fill="#222"/><ellipse cx="32" cy="52" rx="6" ry="3" fill="#fff3e0"/><ellipse cx="32" cy="52" rx="3" ry="1.5" fill="#fff"/><ellipse cx="32" cy="46" rx="2" ry="1" fill="#222"/></svg>
+                </span>
+                <span class="animal-icon-option" data-index="1"><!-- Panda -->
+                  <svg viewBox="0 0 64 64" width="56" height="56"><ellipse cx="32" cy="38" rx="20" ry="18" fill="#fff"/><ellipse cx="16" cy="28" rx="8" ry="10" fill="#222"/><ellipse cx="48" cy="28" rx="8" ry="10" fill="#222"/><ellipse cx="24" cy="40" rx="3" ry="5" fill="#fff"/><ellipse cx="40" cy="40" rx="3" ry="5" fill="#fff"/><circle cx="24" cy="42" r="1.2" fill="#222"/><circle cx="40" cy="42" r="1.2" fill="#222"/><ellipse cx="32" cy="52" rx="6" ry="3" fill="#bdbdbd"/><ellipse cx="32" cy="52" rx="3" ry="1.5" fill="#fff"/><ellipse cx="32" cy="46" rx="2" ry="1" fill="#222"/></svg>
+                </span>
+                <span class="animal-icon-option" data-index="2"><!-- Gato -->
+                  <svg viewBox="0 0 64 64" width="56" height="56"><circle cx="32" cy="36" r="22" fill="#FFD180"/><polygon points="12,24 20,8 24,28" fill="#FFD180"/><polygon points="52,24 44,8 40,28" fill="#FFD180"/><ellipse cx="24" cy="40" rx="3" ry="5" fill="#fff"/><ellipse cx="40" cy="40" rx="3" ry="5" fill="#fff"/><circle cx="24" cy="42" r="1.2" fill="#222"/><circle cx="40" cy="42" r="1.2" fill="#222"/><ellipse cx="32" cy="52" rx="6" ry="3" fill="#FFB300"/><ellipse cx="32" cy="52" rx="3" ry="1.5" fill="#fff"/><rect x="29" y="46" width="6" height="2" rx="1" fill="#222"/></svg>
+                </span>
+                <span class="animal-icon-option" data-index="3"><!-- Perro -->
+                  <svg viewBox="0 0 64 64" width="56" height="56"><ellipse cx="32" cy="38" rx="20" ry="18" fill="#FFE0B2"/><ellipse cx="16" cy="32" rx="8" ry="12" fill="#A1887F"/><ellipse cx="48" cy="32" rx="8" ry="12" fill="#A1887F"/><ellipse cx="24" cy="40" rx="3" ry="5" fill="#fff"/><ellipse cx="40" cy="40" rx="3" ry="5" fill="#fff"/><circle cx="24" cy="42" r="1.2" fill="#222"/><circle cx="40" cy="42" r="1.2" fill="#222"/><ellipse cx="32" cy="52" rx="6" ry="3" fill="#FF7043"/><ellipse cx="32" cy="52" rx="3" ry="1.5" fill="#fff"/><ellipse cx="32" cy="46" rx="2" ry="1" fill="#222"/></svg>
+                </span>
+                <span class="animal-icon-option" data-index="4"><!-- León -->
+                  <svg viewBox="0 0 64 64" width="56" height="56"><circle cx="32" cy="36" r="22" fill="#FFB300"/><ellipse cx="32" cy="36" rx="18" ry="18" fill="#FFE082"/><ellipse cx="24" cy="40" rx="3" ry="5" fill="#fff"/><ellipse cx="40" cy="40" rx="3" ry="5" fill="#fff"/><circle cx="24" cy="42" r="1.2" fill="#222"/><circle cx="40" cy="42" r="1.2" fill="#222"/><ellipse cx="32" cy="52" rx="6" ry="3" fill="#FFB300"/><ellipse cx="32" cy="52" rx="3" ry="1.5" fill="#fff"/><ellipse cx="32" cy="46" rx="2" ry="1" fill="#222"/></svg>
+                </span>
+                <span class="animal-icon-option" data-index="5"><!-- Conejo -->
+                  <svg viewBox="0 0 64 64" width="56" height="56"><ellipse cx="32" cy="38" rx="20" ry="18" fill="#fff"/><rect x="18" y="8" width="8" height="24" rx="4" fill="#fff"/><rect x="38" y="8" width="8" height="24" rx="4" fill="#fff"/><ellipse cx="24" cy="40" rx="3" ry="5" fill="#fff"/><ellipse cx="40" cy="40" rx="3" ry="5" fill="#fff"/><circle cx="24" cy="42" r="1.2" fill="#222"/><circle cx="40" cy="42" r="1.2" fill="#222"/><ellipse cx="32" cy="52" rx="6" ry="3" fill="#F8BBD0"/><ellipse cx="32" cy="52" rx="3" ry="1.5" fill="#fff"/><ellipse cx="32" cy="46" rx="2" ry="1" fill="#222"/></svg>
+                </span>
+                <span class="animal-icon-option" data-index="6"><!-- Elefante -->
+                  <svg viewBox="0 0 64 64" width="56" height="56"><ellipse cx="32" cy="38" rx="20" ry="18" fill="#B0BEC5"/><ellipse cx="16" cy="38" rx="6" ry="10" fill="#B0BEC5"/><ellipse cx="48" cy="38" rx="6" ry="10" fill="#B0BEC5"/><ellipse cx="24" cy="40" rx="3" ry="5" fill="#fff"/><ellipse cx="40" cy="40" rx="3" ry="5" fill="#fff"/><circle cx="24" cy="42" r="1.2" fill="#222"/><circle cx="40" cy="42" r="1.2" fill="#222"/><rect x="30" y="48" width="4" height="10" rx="2" fill="#90A4AE"/><ellipse cx="32" cy="52" rx="6" ry="3" fill="#B0BEC5"/><ellipse cx="32" cy="52" rx="3" ry="1.5" fill="#fff"/></svg>
+                </span>
+                <span class="animal-icon-option" data-index="7"><!-- Mono -->
+                  <svg viewBox="0 0 64 64" width="56" height="56"><ellipse cx="32" cy="38" rx="20" ry="18" fill="#A1887F"/><ellipse cx="32" cy="44" rx="14" ry="10" fill="#FFE0B2"/><ellipse cx="24" cy="40" rx="3" ry="5" fill="#fff"/><ellipse cx="40" cy="40" rx="3" ry="5" fill="#fff"/><circle cx="24" cy="42" r="1.2" fill="#222"/><circle cx="40" cy="42" r="1.2" fill="#222"/><ellipse cx="32" cy="52" rx="6" ry="3" fill="#A1887F"/><ellipse cx="32" cy="52" rx="3" ry="1.5" fill="#fff"/><ellipse cx="32" cy="46" rx="2" ry="1" fill="#222"/></svg>
+                </span>
+                <span class="animal-icon-option" data-index="8"><!-- Oso -->
+                  <svg viewBox="0 0 64 64" width="56" height="56"><ellipse cx="32" cy="38" rx="20" ry="18" fill="#8D6E63"/><ellipse cx="16" cy="28" rx="6" ry="8" fill="#8D6E63"/><ellipse cx="48" cy="28" rx="6" ry="8" fill="#8D6E63"/><ellipse cx="24" cy="40" rx="3" ry="5" fill="#fff"/><ellipse cx="40" cy="40" rx="3" ry="5" fill="#fff"/><circle cx="24" cy="42" r="1.2" fill="#222"/><circle cx="40" cy="42" r="1.2" fill="#222"/><ellipse cx="32" cy="52" rx="6" ry="3" fill="#BCAAA4"/><ellipse cx="32" cy="52" rx="3" ry="1.5" fill="#fff"/><ellipse cx="32" cy="46" rx="2" ry="1" fill="#222"/></svg>
+                </span>
+                <span class="animal-icon-option" data-index="9"><!-- Búho -->
+                  <svg viewBox="0 0 64 64" width="56" height="56"><circle cx="32" cy="32" r="30" fill="#FFD54F"/><ellipse cx="22" cy="32" rx="8" ry="12" fill="#6D4C41"/><ellipse cx="42" cy="32" rx="8" ry="12" fill="#6D4C41"/><ellipse cx="22" cy="32" rx="4" ry="6" fill="#fff"/><ellipse cx="42" cy="32" rx="4" ry="6" fill="#fff"/><circle cx="22" cy="34" r="2" fill="#222"/><circle cx="42" cy="34" r="2" fill="#222"/><ellipse cx="32" cy="48" rx="10" ry="6" fill="#FFB300"/><ellipse cx="32" cy="48" rx="6" ry="3" fill="#fff"/><polygon points="32,20 28,28 36,28" fill="#FFB300"/></svg>
+                </span>
+            </div>
+        </div>
+        <div class="stats-section">
+            <h3>Estadísticas de Pruebas</h3>
+            <div class="stats-list">
+                <div class="stat-item">
+                    <span class="stat-course">Matemáticas</span>
+                    <span class="stat-time" id="math-time">2h 15min</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-course">Ciencias</span>
+                    <span class="stat-time" id="science-time">1h 40min</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-course">Historia</span>
+                    <span class="stat-time" id="history-time">55min</span>
+                </div>
+            </div>
+            <h3>Progreso en Pruebas</h3>
+            <canvas id="progressChart" width="620" height="340"></canvas>
+            <button id="logout-btn" class="logout-btn-standalone">Cerrar sesión</button>
+        </div>
+    </div>
+    <div id="logout-message" class="logout-message">Sesión cerrada. Redirigiendo...</div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.umd.min.js"></script>
+    <script src="script2.js"></script>
+</body>
+</html>

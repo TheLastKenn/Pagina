@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- SCRIPT 2 - STYLE 2-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas de Ciencias | WikiLabs</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="header">
+    <nav class="header-menu">  
+        <ul style="margin:0; padding:0;">
+            <li class="nav-menu-item">
+            <a href="../index.html#coursesPage" class="nav-menu-link volver-btn">Volver</a>
+            </li>
+        </ul>
+        <div class="logo-container">
+            <img src="../LOGO1.png" class="logo">
+        </div>
+    </nav>  
+</div>
+    <div class="container quiz-container">
+        <h1 class="lema">Preguntas de Ciencias</h1>
+        <form id="quizForm">
+            <!-- Pregunta 1 -->
+            <div class="question-block">
+                <p class="question-title">1. ¿Cuál es la unidad básica de la vida según la biología?</p>
+                <svg width="170" height="90" viewBox="0 0 120 60">
+                    <ellipse cx="60" cy="30" rx="40" ry="20" fill="#e0ffe9" stroke="#43e97b" stroke-width="3"/>
+                    <circle cx="60" cy="30" r="10" fill="#fff" stroke="#36e2f6" stroke-width="2"/>
+                    <circle cx="60" cy="30" r="4" fill="#43e97b"/>
+                    <text x="60" y="55" font-size="12" text-anchor="middle" fill="#1a7f4e">Célula</text>
+                </svg>
+                <ul>
+                    <li><label><input type="radio" name="q1" value="A"> A) El átomo</label></li>
+                    <li><label><input type="radio" name="q1" value="B"> B) La célula</label></li>
+                    <li><label><input type="radio" name="q1" value="C"> C) El tejido</label></li>
+                    <li><label><input type="radio" name="q1" value="D"> D) El órgano</label></li>
+                </ul>
+            </div>
+            <!-- Pregunta 2 -->
+            <div class="question-block">
+                <p class="question-title">2. ¿Cuáles son las funciones vitales de los seres vivos?</p>
+                <ul>
+                    <li><label><input type="radio" name="q2" value="A"> A) Respiración, fotosíntesis y digestión</label></li>
+                    <li><label><input type="radio" name="q2" value="B"> B) Nutrición, relación y reproducción</label></li>
+                    <li><label><input type="radio" name="q2" value="C"> C) Movimiento, crecimiento y evaporación</label></li>
+                    <li><label><input type="radio" name="q2" value="D"> D) Alimentación, excreción y combustión</label></li>
+                </ul>
+            </div>
+            <!-- Pregunta 3 -->
+            <div class="question-block">
+                <p class="question-title">3. ¿Qué tipos de seres vivos existen?</p>
+                <canvas id="seresChart" width="320" height="180"></canvas>
+                <ul>
+                    <li><label><input type="radio" name="q3" value="A"> A) Animales, plantas, hongos, bacterias y protistas</label></li>
+                    <li><label><input type="radio" name="q3" value="B"> B) Rocas, minerales, agua y aire</label></li>
+                    <li><label><input type="radio" name="q3" value="C"> C) Humanos, robots y plantas</label></li>
+                    <li><label><input type="radio" name="q3" value="D"> D) Mamíferos, aves y peces solamente</label></li>
+                </ul>
+            </div>
+            <!-- Pregunta 4 -->
+            <div class="question-block">
+                <p class="question-title">4. ¿Qué es un ecosistema?</p>
+                <svg width="120" height="60" viewBox="0 0 120 60">
+                    <rect x="10" y="40" width="100" height="10" fill="#e0f7fa"/>
+                    <circle cx="30" cy="45" r="7" fill="#43e97b"/>
+                    <rect x="80" y="30" width="20" height="20" fill="#f6c736"/>
+                    <text x="60" y="20" font-size="12" text-anchor="middle" fill="#1a6fa6">Ecosistema</text>
+                </svg>
+                <ul>
+                    <li><label><input type="radio" name="q4" value="A"> A) Un grupo de animales de la misma especie</label></li>
+                    <li><label><input type="radio" name="q4" value="B"> B) El conjunto de seres vivos y el entorno donde viven</label></li>
+                    <li><label><input type="radio" name="q4" value="C"> C) Un tipo de célula</label></li>
+                    <li><label><input type="radio" name="q4" value="D"> D) Un experimento de laboratorio</label></li>
+                </ul>
+            </div>
+            <!-- Pregunta 5 -->
+            <div class="question-block">
+                <p class="question-title">5. ¿Cuál es el orden correcto de una cadena alimenticia?</p>
+                <canvas id="cadenaChart" width="320" height="180"></canvas>
+                <ul>
+                    <li><label><input type="radio" name="q5" value="A"> A) Consumidores → Productores → Descomponedores</label></li>
+                    <li><label><input type="radio" name="q5" value="B"> B) Productores → Consumidores → Descomponedores</label></li>
+                    <li><label><input type="radio" name="q5" value="C"> C) Descomponedores → Productores → Consumidores</label></li>
+                    <li><label><input type="radio" name="q5" value="D"> D) Productores → Descomponedores → Consumidores</label></li>
+                </ul>
+            </div>
+            <!-- Pregunta 6 -->
+            <div class="question-block">
+                <p class="question-title">6. ¿Cuál es la fórmula para calcular la velocidad en física?</p>
+                <svg width="170" height="85" viewBox="0 0 120 40">
+                    <text x="10" y="25" font-size="18" fill="#36e2f6">v = d / t</text>
+                </svg>
+                <ul>
+                    <li><label><input type="radio" name="q6" value="A"> A) v = m × a</label></li>
+                    <li><label><input type="radio" name="q6" value="B"> B) v = d / t</label></li>
+                    <li><label><input type="radio" name="q6" value="C"> C) v = F / m</label></li>
+                    <li><label><input type="radio" name="q6" value="D"> D) v = t / d</label></li>
+                </ul>
+            </div>
+            <!-- Pregunta 7 -->
+            <div class="question-block">
+                <p class="question-title">7. ¿Cuál es la segunda ley de Newton?</p>
+                <ul>
+                    <li><label><input type="radio" name="q7" value="A"> A) F = m × a</label></li>
+                    <li><label><input type="radio" name="q7" value="B"> B) Todo cuerpo permanece en reposo si no actúa una fuerza</label></li>
+                    <li><label><input type="radio" name="q7" value="C"> C) A toda acción corresponde una reacción igual y contraria</label></li>
+                    <li><label><input type="radio" name="q7" value="D"> D) La energía no se crea ni se destruye</label></li>
+                </ul>
+            </div>
+            <!-- Pregunta 8 -->
+            <div class="question-block">
+                <p class="question-title">8. ¿Cuáles son los estados de la materia?</p>
+                <canvas id="materiaChart" width="320" height="180"></canvas>
+                <ul>
+                    <li><label><input type="radio" name="q8" value="A"> A) Sólido, líquido y gaseoso</label></li>
+                    <li><label><input type="radio" name="q8" value="B"> B) Agua, aire y tierra</label></li>
+                    <li><label><input type="radio" name="q8" value="C"> C) Metal, madera y plástico</label></li>
+                    <li><label><input type="radio" name="q8" value="D"> D) Luz, sonido y calor</label></li>
+                </ul>
+            </div>
+            <!-- Pregunta 9 -->
+            <div class="question-block">
+                <p class="question-title">9. ¿Qué es un cambio químico?</p>
+                <ul>
+                    <li><label><input type="radio" name="q9" value="A"> A) Cuando el agua se congela</label></li>
+                    <li><label><input type="radio" name="q9" value="B"> B) Cuando el hierro se oxida formando óxido</label></li>
+                    <li><label><input type="radio" name="q9" value="C"> C) Cuando el hielo se derrite</label></li>
+                    <li><label><input type="radio" name="q9" value="D"> D) Cuando se mezcla agua y arena</label></li>
+                </ul>
+            </div>
+            <!-- Pregunta 10 -->
+            <div class="question-block">
+                <p class="question-title">10. ¿Qué debes hacer para cuidar el medio ambiente en casa?</p>
+                <ul>
+                    <li><label><input type="radio" name="q10" value="A"> A) Dejar las luces encendidas</label></li>
+                    <li><label><input type="radio" name="q10" value="B"> B) Separar residuos, ahorrar agua y energía, cuidar las plantas</label></li>
+                    <li><label><input type="radio" name="q10" value="C"> C) Usar más plástico</label></li>
+                    <li><label><input type="radio" name="q10" value="D"> D) Tirar basura en la calle</label></li>
+                </ul>
+            </div>
+            <button type="submit" class="submit-btn">Enviar respuestas</button>
+        </form>
+        <div id="result" class="result-block"></div>
+        <canvas id="resultChart" width="320" height="180" style="display:none"></canvas>
+    </div>
+<script src="script2.js"></script>
+</body>
+</html>
